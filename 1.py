@@ -1,11 +1,14 @@
 import numpy as np
-print(np.__version__) #for checking numpy is imported or not
+print(np.ones(5))
+print(np.__version__)
+np.show_config()
+a=np.array([1,2,3,4,5,6,7,8,9,10,11,22,3,44,5,5,5,6,5,67,8,9,8,0])
+print(a.size)
+print(a.reshape(3,4,2))
+print(np.array([1,2,3,4,5,6,7,8,9,10,11,22,3,44,5,5,5,6,5,67,8,9,8,0])[3])
+print(a[3:8])
+print(np.hsplit(a,(3,4)))
+Z = np.arange(9).reshape(3, 3)
+print(Z)
 Z = np.zeros((10,10))
 print("%d bytes" % (Z.size * Z.itemsize))
-I = np.array([0, 1, 2, 3, 15, 16, 32, 64, 128])
-B = ((I.reshape(-1,1) & (2**np.arange(8))) != 0).astype(int)
-print(B[:,::-1])
-
-
-I = np.array([0, 1, 2, 3, 15, 16, 32, 64, 128], dtype=np.uint8)
-print(np.unpackbits(I[:, np.newaxis], axis=1))
