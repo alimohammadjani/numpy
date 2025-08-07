@@ -1,14 +1,12 @@
 import numpy as np
-print(np.ones(5))
-print(np.__version__)
-np.show_config()
-a=np.array([1,2,3,4,5,6,7,8,9,10,11,22,3,44,5,5,5,6,5,67,8,9,8,0])
-print(a.size)
-print(a.reshape(3,4,2))
-print(np.array([1,2,3,4,5,6,7,8,9,10,11,22,3,44,5,5,5,6,5,67,8,9,8,0])[3])
-print(a[3:8])
-print(np.hsplit(a,(3,4)))
-Z = np.arange(9).reshape(3, 3)
-print(Z)
-Z = np.zeros((10,10))
-print("%d bytes" % (Z.size * Z.itemsize))
+from datetime import datetime, timedelta
+customer_id=np.random.randint(1, 501, size=100)
+product_id=np.random.randint(1, 51, size=100)
+price=np.random.uniform(5, 501, size=100)
+quantity=np.random.randint(1, 6, size=100)
+start = datetime(2025, 8, 1)
+end = datetime(2025, 8, 31, 23, 59, 59)
+timestamp=[start + timedelta(seconds=np.random.randint(0, int((end-start).total_seconds()))) for _ in range(100)]
+mean,sum=np.mean(price),np.sum(price)
+max_price=np.max(price)
+peak_time=timestamp[max(timestamp,return_count=True)]
